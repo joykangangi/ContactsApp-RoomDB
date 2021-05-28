@@ -4,17 +4,18 @@ import androidx.room.*
 import com.example.contactsroom.db.entities.UserEntity
 
 @Dao
-
+//methods to access database
 interface UserDao {
-    @Query("SELECT * FROM user")
-    fun selectAllUsers(): List<UserEntity>
 
-    @Insert
-    fun insertUser(userEntity: UserEntity)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) //do update or insert user data
+    fun upsert(userEntity: UserEntity)
 
     @Delete
-    fun deleteUser(userEntity: UserEntity)
+    fun delete(userEntity: UserEntity)
 
-    @Update
-    fun updateUser(userEntity: UserEntity)
+   // @Query("SELECT * FROM user")
+   // fun isDataExist(userEntity: UserEntity): Int
+
+    @Query("SELECT * FROM user WHERE user_email = :userEmail")
+    fun isDataExist(userEmail: String?): Int
 }

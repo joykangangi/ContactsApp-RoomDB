@@ -13,9 +13,26 @@
     <string name="create_new">Create Your Account</string>
     <string name="invalid_email">Not a valid email</string>
     <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
 
+    <string name="login_failed">"Login failed, User does not exist"</string>
 
+    <string name="success">Account Created Successfully</string>
+    <string name="login_success">Login Success</string>
+
+    <string name="login">Login To Your Account</string>
     <string name="cont_logo">Contact Logo</string>
 
+    <string name="add_new">Add New Contact</string>
+    <string name="hint_name">Contact Name</string>
+    <string name="hint_phone">Phone No.</string>
+    <string name="saveBtn">Save</string>
+    <string name="vecImg">Vector</string>
+    <string name="fab">Floating Action Button</string>
+
+
+    <string name="work">Work</string>
+    <string name="friends">Friends</string>
+    <string name="school">School</string>
+    <string name="blacklist">Blacklist</string>
+    <string name="neighbors">Neighbors</string>
 </resources>

@@ -12,16 +12,18 @@ import com.example.contactsroom.db.entities.UserEntity
     version = 1
 )
 abstract class UserDatabase: RoomDatabase() {
-    abstract fun userDao(): UserDao
+    abstract fun getUserDao(): UserDao //get database operations
 
+    //singleton to ensure there is only one instance at a time for the db
     companion object {
         @Volatile private var instance: UserDatabase? = null
         private var LOCK = Any()
 
         operator fun invoke(context: Context) = instance?: synchronized(LOCK){
-         instance?: buildInterface(context)
+         instance?: createDatabase(context).also { instance = it }
         }
-        private fun buildInterface(context: Context) = Room.databaseBuilder(context, UserDatabase::class.java, "user.db").build()
+        private fun createDatabase(context: Context) =
+            Room.databaseBuilder(context.applicationContext, UserDatabase::class.java, "user.db").build()
 
     }
 

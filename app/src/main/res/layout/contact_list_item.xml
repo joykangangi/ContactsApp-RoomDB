@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/nameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        tool:text="contact name"
+        style="@style/Widget.ContactsRoom.TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/phoneNoTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/nameTv"
+        app:layout_constraintStart_toStartOf="@id/nameTv"
+        android:layout_marginTop="8dp"
+        tool:text="+254775811201"
+        style="@style/Widget.ContactsRoom.TextView"
+        android:textSize="18sp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
